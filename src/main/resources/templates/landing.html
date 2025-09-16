@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8"/>
+    <title>Landing</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="min-h-screen flex items-center justify-center bg-gray-100">
+<div class="bg-white p-8 rounded-lg shadow-lg w-full max-w-md">
+    <h1 class="text-2xl font-bold mb-6 text-center">Chào mừng</h1>
+    <a
+            th:href="@{/oauth2/authorization/keycloak}"
+            class="block w-full bg-green-500 text-white py-2 rounded-lg hover:bg-green-600 text-center"
+    >
+        Đăng nhập bằng Keycloak
+    </a>
+    <a
+            th:href="@{http://localhost:8080/realms/master/login-actions/registration?client_id=ADMIN&redirect_uri=http://localhost:1234/login/oauth2/code/keycloak}"
+            class="block mt-4 w-full bg-blue-500 text-white py-2 rounded-lg hover:bg-blue-600 text-center"
+    >
+        Đăng ký bằng Keycloak
+    </a>
+</div>
+</body>
+</html>
